@@ -37,7 +37,7 @@ jobs:
     - name: Test with pytest
       run: PYTHONPATH="." pytest
     - name: Heroku Deployment
-      with:
+      env:
         heroku_api_key: ${{ secrets.HEROKU_API_TOKEN }}
         heroku_email: ${{ secrets.HEROKU_EMAIL }}
         heroku_app_name: ${{ secrets.HEROKU_NAME }}
