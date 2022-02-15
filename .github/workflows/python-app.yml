@@ -37,12 +37,12 @@ jobs:
     - name: Heroku Deployment
       # You may pin to the exact commit or the version.
       # uses: CDNievas/heroku-action@c9cf9c85571e67583e44ec92c0d1113f66b0e838
-      uses: CDNievas/heroku-action@v1.0
+#      uses: CDNievas/heroku-action@v1.0
       with:
         heroku_api_key: ${{ secrets.HEROKU_API_TOKEN }}
         heroku_email: ${{ secrets.HEROKU_EMAIL }}
         heroku_app_name: ${{ secrets.HEROKU_NAME }}
-#       run:
-#         git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_NAME.git
-#         git push heroku HEAD:master -f
+       run:
+         git remote add heroku https://heroku:$heroku_api_key@git.heroku.com/$heroku_app_name.git
+         git push heroku HEAD:master -f
 
